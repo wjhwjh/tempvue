@@ -18,7 +18,7 @@ Vue.use(VueRouter)
         },
         children: [
             {
-                path: 'myHome',
+                path: 'home',
                 name: 'myHome',
                 component: () => import('@/views/Home/Home.vue'),
                 meta: {
@@ -26,7 +26,7 @@ Vue.use(VueRouter)
                     routerGuard: true,
                 },
             },
-           /* {
+            {
                 path: '/homePerson',
                 name: 'homePerson',
                 component: () => import('@/views/Home/HomePerson.vue'),
@@ -34,10 +34,10 @@ Vue.use(VueRouter)
                     title: '个人中心',
                     routerGuard: true,
                 },
-            }*/
+            }
         ]
     },
-/*    {
+    {
 
         path: '/setting',
         name: 'setting',
@@ -69,8 +69,8 @@ Vue.use(VueRouter)
 
             }
         ]
-    },*/
-/*    {
+    },
+    {
         path: '/login',
         name: 'login',
         meta: {
@@ -78,16 +78,28 @@ Vue.use(VueRouter)
             icon: 'login'
         },
         component: () => import( '@/layout/login/login.vue' )
-    }*/
-
+    }
 
 ]
 /*const routes = [
     {
         path: '/',
+        redirect: '/myHome',
         name: 'home',
-        component: Home,
-    }
+        component: Layout,
+        children:[
+            {
+                path: 'myHome',
+                name: 'myHome',
+                component: () => import('@/views/Home/Home.vue'),
+                meta: {
+                    title: '首页',
+                    routerGuard: true,
+                },
+            }
+        ]
+    },
+
 ]*/
 const router = new VueRouter({
     routes

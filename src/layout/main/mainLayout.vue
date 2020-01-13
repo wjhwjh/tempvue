@@ -1,9 +1,9 @@
 <template>
     <div class="layout-frame">
-      <!--  <a-layout>
+        <a-layout>
             <a-layout-header class="header">
                 <div class="logo">
-                    &lt;!&ndash;logo&ndash;&gt;
+                    <!--logo-->
                     <a class="logo-tit">
                         这里是标题
                     </a>
@@ -11,7 +11,7 @@
                 </div>
             </a-layout-header>
             <a-layout>
-                &lt;!&ndash;<admin-sidebar @getMenuKey="getMenuKey"></admin-sidebar>&ndash;&gt;
+                <!--<admin-sidebar @getMenuKey="getMenuKey"></admin-sidebar>-->
                 <div class="aside">
                     <a-menu
                             @click="handleClick"
@@ -46,18 +46,16 @@
                         <router-view/>
                     </a-layout-content>
 
-                    &lt;!&ndash; <a-layout-footer>
+                    <!-- <a-layout-footer>
                          <div class="footer">
                             footer
                          </div>
-                     </a-layout-footer>&ndash;&gt;
+                     </a-layout-footer>-->
                 </a-layout>
             </a-layout>
-        </a-layout>-->
+        </a-layout>
 
 
-        kxcjkvxjckvlxjv
-        <router-view/>
 
     </div>
 
@@ -66,7 +64,7 @@
 
 <script>
     export default {
-     /*   data() {
+        data() {
             return {
                 menuData: [], // 路由数组对象
                 rootSubmenuKeys: [], // 有子菜单sub-menu的key值
@@ -120,9 +118,9 @@
             this.initOpenMenu();
             this.openKeys = ['home'];
             this.currentRoute = 'homePerson';
-            /!*     console.log(this.menuData);
-                 console.log(  this.rootSubmenuKeys);*!/
-        },*/
+            /*     console.log(this.menuData);
+                 console.log(  this.rootSubmenuKeys);*/
+        },
 
 
 
