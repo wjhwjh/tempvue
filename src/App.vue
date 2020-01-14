@@ -6,8 +6,8 @@
 <script>
   export default{
       mounted(){
-        console.log('出问题了----');
-        console.log(this.$router);
+       /* console.log('出问题了----');
+        console.log(this.$router);*/
       }
   }
 
