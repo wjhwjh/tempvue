@@ -1,11 +1,66 @@
-@white:#fff;
-.boxFill{
+@white: #fff;
+@black: #000;
+
+.layout-boxFill {
   padding: 20px;
   margin-left: -10px;
   margin-right: -10px;
   margin-top: 10px;
+
 }
-.layout-global{
+
+.layout-global {
   background-color: @white;
-  .boxFill;
+  .layout-boxFill;
+}
+
+/*login*/
+.fixed-screen {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  left: 0;
+  top: 0;
+}
+
+.login {
+  .fixed-screen;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: @black;
+  .login-bg {
+    .fixed-screen;
+    z-index: 0;
+    background: url('../../img/bg-g.jpg') no-repeat center top;
+    background-size: cover;
+    opacity: 0.9;
+    filter: blur(5px);
+  }
+
+}
+
+.login-main {
+  width: 600px;
+  height: 300px;
+  padding: 24px 30px;
+  position: relative;
+  z-index: 10;
+  background: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  > div {
+
+  }
+  .login-left {
+    border-right: 1px solid #aaa;
+    flex: 1 0 0;
+    font-weight: bold;
+    font-size: 20px;
+  }
+  .login-right {
+    flex: 2 0 0;
+  }
 }
