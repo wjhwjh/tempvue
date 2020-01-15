@@ -45,7 +45,7 @@
 </script>
 
 <style lang="less">
-    @import '../../assets/theme/styles/index.less';
+   @import '../../assets/theme/styles/index.less';
 
     .layout-frame {
         .side-bar {

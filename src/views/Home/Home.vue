@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="layout-global">
         <h1>首页啊啊啊</h1>
     </div>
 </template>
@@ -13,6 +13,7 @@
     }
 </script>
 
-<style scoped>
+<style scoped lang="less">
+ @import '../../assets/theme/partion/index.less';
 
 </style>
