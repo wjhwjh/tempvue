@@ -1,19 +1,22 @@
 <template>
-    <a-layout-sider>
-        <div class="aside">
+
+    <a-layout-sider  theme="light" :trigger="null" collapsible v-model="collapsed"  :style="{ overflowX:'hidden',overflowY: 'auto', height: '100vh', position: 'fixed', left: 0, paddingTop:'60px',borderRightColor: '#ddd',  }">
+      <!--  <div class="aside">-->
             <a-menu
                     @click="handleClick"
                     mode="inline"
                     :selectedKeys="[currentRoute]"
                     :openKeys="openKeys"
                     @openChange="onOpenChange"
+                    theme="light"
+                    :style="{borderRight:0}"
             >
                 <template v-for="menuRouter in menuData">
                     <a-menu-item :key="menuRouter.name"
                                  v-if="menuRouter.children===undefined || menuRouter.children&&menuRouter.children.length===1">
                         <router-link :to="{name:menuRouter.name}">
                             <a-icon :type="menuRouter.meta.icon"/>
-                            {{menuRouter.meta.title}}
+                            <span>{{menuRouter.meta.title}}</span>
                         </router-link>
                     </a-menu-item>
                     <a-sub-menu :key="menuRouter.name" v-else>
@@ -27,11 +30,12 @@
                     </a-sub-menu>
                 </template>
             </a-menu>
-        </div>
+      <!--  </div>-->
     </a-layout-sider>
 </template>
 
 <script>
+    import commonVue from './commonJs.js'
     export default {
         data() {
             return {
@@ -39,6 +43,7 @@
                 rootSubmenuKeys: [], // 有子菜单sub-menu的key值
                 openKeys: [], //当前展开项
                 currentRoute: '',
+                collapsed: false,
             }
         },
         computed: {
@@ -102,6 +107,10 @@
         mounted() {
             this.getRouter();
             this.initOpenMenu();
+            commonVue.$on('collapsedState', (val)=> {
+                this.collapsed = val;
+            })
+
         },
     }
 </script>
